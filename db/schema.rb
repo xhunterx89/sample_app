@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20130315230445) do
 
   create_table "microposts", force: true do |t|
@@ -32,6 +33,9 @@ ActiveRecord::Schema.define(version: 20130315230445) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+=======
+ActiveRecord::Schema.define(version: 20131009061849) do
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -40,7 +44,11 @@ ActiveRecord::Schema.define(version: 20130315230445) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
+<<<<<<< HEAD
     t.boolean  "admin"
+=======
+    t.boolean  "admin",           default: false
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

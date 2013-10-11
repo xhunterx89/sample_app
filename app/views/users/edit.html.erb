@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 <% provide(:title, "Edit user") %> 
+=======
+<% provide(:title, "Edit user") %>
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
 <h1>Update your profile</h1>
 
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
+<<<<<<< HEAD
       <%= render 'shared/error_messages', object: f.object %>
+=======
+      <%= render 'shared/error_messages' %>
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
 
       <%= f.label :name %>
       <%= f.text_field :name %>
@@ -24,4 +32,8 @@
     <%= gravatar_for @user %>
     <a href="http://gravatar.com/emails">change</a>
   </div>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc

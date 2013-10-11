@@ -8,11 +8,17 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
+<<<<<<< HEAD
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
   # The following optional lines are part of the advanced setup.
+=======
+group :development, :test do
+  gem 'sqlite3', '1.3.8'
+  gem 'rspec-rails', '2.13.1'
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   gem 'guard-rspec', '2.5.0'
   gem 'spork-rails', '4.0.0'
   gem 'guard-spork', '1.5.0'
@@ -22,6 +28,7 @@ end
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+<<<<<<< HEAD
   gem 'factory_girl_rails', '4.2.0'
   gem 'cucumber-rails', '1.3.0', :require => false
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
@@ -36,6 +43,11 @@ group :test do
   # gem 'rb-notifu', '0.0.4'
   # gem 'win32console', '1.3.2'
   # gem 'wdm', '0.1.0'
+=======
+  gem 'factory_girl_rails', '4.2.1'
+  gem 'cucumber-rails', '1.4.0', :require => false
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
 end
 
 gem 'sass-rails', '4.0.0'

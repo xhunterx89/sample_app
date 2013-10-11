@@ -19,6 +19,7 @@ SampleApp::Application.configure do
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
+<<<<<<< HEAD
   config.serve_static_assets = false
 
   # Compress JavaScripts and CSS.
@@ -26,6 +27,16 @@ SampleApp::Application.configure do
   # config.assets.css_compressor = :sass
 
   # Whether to fallback to assets pipeline if a precompiled asset is missed.
+=======
+  # Disable Rails's static asset server (Apache or nginx will already do this).
+  config.serve_static_assets = false
+
+  # Compress JavaScripts and CSS.
+  config.assets.js_compressor = :uglifier
+  # config.assets.css_compressor = :sass
+
+  # Do not fallback to assets pipeline if a precompiled asset is missed.
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   config.assets.compile = false
 
   # Generate digests for assets URLs.
@@ -63,7 +74,10 @@ SampleApp::Application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
+<<<<<<< HEAD
 
+=======
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
   config.i18n.fallbacks = true

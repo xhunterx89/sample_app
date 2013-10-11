@@ -13,7 +13,10 @@ Spork.prefork do
 
   # Checks for pending migrations before tests are run.
   # If you are not using ActiveRecord, you can remove this line.
+<<<<<<< HEAD
   ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
+=======
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
 
   RSpec.configure do |config|
     # ## Mock Framework
@@ -42,16 +45,24 @@ Spork.prefork do
     # the seed, which is printed after each run.
     #     --seed 1234
     config.order = "random"
+<<<<<<< HEAD
     # Include the Capybara DSL so that specs in spec/requests still work.
     config.include Capybara::DSL
     # Disable the old-style object.should syntax.
     config.expect_with :rspec do |c|
       c.syntax = :expect
     end
+=======
+    config.include Capybara::DSL
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   end
 end
 
 Spork.each_run do
   # This code will be run each time you run your specs.
 
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc

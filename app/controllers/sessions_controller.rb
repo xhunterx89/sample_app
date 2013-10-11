@@ -18,4 +18,8 @@ class SessionsController < ApplicationController
     sign_out
     redirect_to root_url
   end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc

@@ -1,11 +1,16 @@
 module SessionsHelper
+<<<<<<< HEAD
 
   def sign_in(user)
+=======
+	def sign_in(user)
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
     remember_token = User.new_remember_token
     cookies.permanent[:remember_token] = remember_token
     user.update_attribute(:remember_token, User.encrypt(remember_token))
     self.current_user = user
   end
+<<<<<<< HEAD
 
   def signed_in?
     !current_user.nil?
@@ -17,6 +22,16 @@ module SessionsHelper
 
   def current_user
     remember_token  = User.encrypt(cookies[:remember_token])
+=======
+  def signed_in?
+    !current_user.nil?
+  end
+  def current_user=(user)
+    @current_user = user
+  end
+  def current_user
+    remember_token = User.encrypt(cookies[:remember_token])
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
     @current_user ||= User.find_by(remember_token: remember_token)
   end
 
@@ -24,6 +39,7 @@ module SessionsHelper
     user == current_user
   end
 
+<<<<<<< HEAD
   def signed_in_user
     unless signed_in?
       store_location
@@ -31,11 +47,16 @@ module SessionsHelper
     end
   end
 
+=======
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   def sign_out
     self.current_user = nil
     cookies.delete(:remember_token)
   end
+<<<<<<< HEAD
 
+=======
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   def redirect_back_or(default)
     redirect_to(session[:return_to] || default)
     session.delete(:return_to)

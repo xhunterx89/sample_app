@@ -1,5 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
+<<<<<<< HEAD
 # Pick the frameworks you want:
 require "active_record/railtie"
 require "action_controller/railtie"
@@ -9,6 +10,13 @@ require "sprockets/railtie"
 
 # Assets should be precompiled for production (so we don't need the gems loaded then)
 Bundler.require(*Rails.groups(assets: %w(development test)))
+=======
+require 'rails/all'
+
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
+Bundler.require(:default, Rails.env)
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
 
 module SampleApp
   class Application < Rails::Application
@@ -23,7 +31,12 @@ module SampleApp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+<<<<<<< HEAD
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+=======
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.initialize_on_precompile = false 
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   end
 end

@@ -62,21 +62,32 @@ p {
   line-height: 1.7em;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
 /* header */
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
+<<<<<<< HEAD
   color: white;
+=======
+  color: #fff;
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   line-height: 1;
   &:hover {
+<<<<<<< HEAD
     color: white;
+=======
+    color: #fff;
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
     text-decoration: none;
   }
 }
@@ -87,11 +98,19 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
+<<<<<<< HEAD
   color: $grayLight;
   a {
     color: $gray;
     &:hover {
       color: $grayDarker;
+=======
+  color: $grayDarker;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
     }
   }
   small {
@@ -106,7 +125,11 @@ footer {
     }
   }
 }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
 /* miscellaneous */
 
 .debug_dump {
@@ -147,6 +170,7 @@ aside {
   margin-right: 10px;
 }
 
+<<<<<<< HEAD
 .stats {
   overflow: auto;
   a {
@@ -176,6 +200,8 @@ aside {
   }
 }
 
+=======
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -201,7 +227,10 @@ input {
   @extend .control-group;
   @extend .error;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
 /* Users index */
 
 .users {
@@ -216,6 +245,7 @@ input {
     }
   }
 }
+<<<<<<< HEAD
 
 /* microposts */
 
@@ -244,3 +274,5 @@ aside {
     margin-bottom: 5px;
   }
 }
+=======
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc

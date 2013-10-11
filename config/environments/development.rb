@@ -23,5 +23,10 @@ SampleApp::Application.configure do
   config.active_record.migration_error = :page_load
 
   # Debug mode disables concatenation and preprocessing of assets.
+<<<<<<< HEAD
+=======
+  # This option may cause significant delays in view rendering with a large
+  # number of complex assets.
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   config.assets.debug = true
 end

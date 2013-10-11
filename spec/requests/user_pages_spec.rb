@@ -5,6 +5,7 @@ describe "User pages" do
   subject { page }
 
   describe "index" do
+<<<<<<< HEAD
     let(:user) { FactoryGirl.create(:user) }
     before(:each) do
       sign_in user
@@ -55,10 +56,60 @@ describe "User pages" do
     let!(:m1) { FactoryGirl.create(:micropost, user: user, content: "Foo") }
     let!(:m2) { FactoryGirl.create(:micropost, user: user, content: "Bar") }
 
+=======
+      let(:user) { FactoryGirl.create(:user) }
+      before(:each) do
+        sign_in user
+        visit users_path
+      end
+
+      it { should have_title('All users') }
+      it { should have_content('All users') }
+
+      describe "pagination" do
+
+        before(:all) { 10.times { FactoryGirl.create(:user) } }
+        after(:all)  { User.delete_all }
+
+        it { should have_selector('div.pagination') }
+
+        it "should list each user" do
+          User.paginate(page: 1).per_page(10).each do |user|
+            expect(page).to have_selector('li', text: user.name)
+          end
+        end
+      end
+      describe "delete links" do
+
+        it { should_not have_link('delete') }
+
+        describe "as an admin user" do
+          let(:admin) { FactoryGirl.create(:admin) }
+          before do
+            sign_in admin
+            visit users_path
+          end
+
+          it { should have_link('delete', href: user_path(User.first)) }
+          it "should be able to delete another user" do
+            expect do
+              click_link('delete', match: :first)
+            end.to change(User, :count).by(-1)
+          end
+          it { should_not have_link('delete', href: user_path(admin)) }
+        end
+      end
+  end
+
+  describe "signup page" do
+    let(:user) { FactoryGirl.create(:user) }
+    #before { visit signup_path }
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
     before { visit user_path(user) }
 
     it { should have_content(user.name) }
     it { should have_title(user.name) }
+<<<<<<< HEAD
 
     describe "microposts" do
       it { should have_content(m1.content) }
@@ -148,6 +199,40 @@ describe "User pages" do
         expect { click_button submit }.to change(User, :count).by(1)
       end
 
+=======
+  end
+  
+  describe "signup page" do
+    before { visit signup_path }
+    
+    it { should have_content('Sign up') }
+    it { should have_title(full_title('Sign up')) }
+  end
+  
+  describe "signup" do
+    
+    before { visit signup_path }
+    
+    let( :submit ) { "Create my account" }
+    
+    describe "with invalid information" do
+      it "should not create user" do
+        expect { click_button submit }.not_to change(User, :count)
+      end
+    end
+    
+    describe "with valid information" do
+      before do
+        fill_in "Name",          with: "Example User"
+        fill_in "Email",         with: "user@example.com"
+        fill_in "Password",      with: "foobar"
+        fill_in "Confirmation",  with: "foobar"
+      end
+      
+      it "should create a user" do
+        expect { click_button submit }.to change(User, :count).by(1)
+      end
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
       describe "after saving the user" do
         before { click_button submit }
         let(:user) { User.find_by(email: 'user@example.com') }
@@ -177,7 +262,10 @@ describe "User pages" do
 
       it { should have_content('error') }
     end
+<<<<<<< HEAD
 
+=======
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
     describe "with valid information" do
       let(:new_name)  { "New Name" }
       let(:new_email) { "new@example.com" }
@@ -195,6 +283,7 @@ describe "User pages" do
       specify { expect(user.reload.name).to  eq new_name }
       specify { expect(user.reload.email).to eq new_email }
     end
+<<<<<<< HEAD
 
     describe "forbidden attributes" do
       let(:params) do
@@ -235,5 +324,7 @@ describe "User pages" do
       it { should have_selector('h3', text: 'Followers') }
       it { should have_link(user.name, href: user_path(user)) }
     end
+=======
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   end
 end

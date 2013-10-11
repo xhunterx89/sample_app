@@ -1,8 +1,25 @@
 include ApplicationHelper
 
+<<<<<<< HEAD
 def sign_in(user, options={})
   if options[:no_capybara]
     # Sign in when not using Capybara as well.
+=======
+def valid_signin(user)
+  fill_in "Email",    with: user.email
+  fill_in "Password", with: user.password
+  click_button "Sign in"
+end
+
+RSpec::Matchers.define :have_error_message do |message|
+  match do |page|
+    expect(page).to have_selector('div.alert.alert-error', text: message)
+  end
+end
+def sign_in(user, options={})
+  if options[:no_capybara]
+    # Sign in when not using Capybara.
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
     remember_token = User.new_remember_token
     cookies[:remember_token] = remember_token
     user.update_attribute(:remember_token, User.encrypt(remember_token))
@@ -12,10 +29,13 @@ def sign_in(user, options={})
     fill_in "Password", with: user.password
     click_button "Sign in"
   end
+<<<<<<< HEAD
 end
 
 RSpec::Matchers.define :have_error_message do |message|
   match do |page|
     expect(page).to have_selector('div.alert.alert-error', text: message)
   end
+=======
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
 end

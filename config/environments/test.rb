@@ -13,7 +13,11 @@ SampleApp::Application.configure do
   config.eager_load = false
 
   # Configure static asset server for tests with Cache-Control for performance.
+<<<<<<< HEAD
   config.serve_static_assets = true
+=======
+  config.serve_static_assets  = true
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   config.static_cache_control = "public, max-age=3600"
 
   # Show full error reports and disable caching.
@@ -33,7 +37,11 @@ SampleApp::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   # Speed up tests by lowering bcrypt's cost function.
   ActiveModel::SecurePassword.min_cost = true
 end

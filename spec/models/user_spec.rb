@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe User do
+<<<<<<< HEAD
 
   before do
     @user = User.new(name: "Example User", email: "user@example.com",
@@ -9,11 +10,22 @@ describe User do
 
   subject { @user }
 
+=======
+  
+  before do
+    @user = User.new(name: "Example user" , email: "user@example.com",
+                            password: "foobar", password_confirmation: "foobar") 
+  end
+
+  subject { @user }
+  
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   it { should respond_to(:name) }
   it { should respond_to(:email) }
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+<<<<<<< HEAD
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
@@ -26,6 +38,13 @@ describe User do
   it { should respond_to(:following?) }
   it { should respond_to(:follow!) }
   it { should respond_to(:unfollow!) }
+=======
+  it { should respond_to(:authenticate) }
+  it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token) }
+  it { should respond_to(:authenticate) }
+  it { should respond_to(:admin) }
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
 
   it { should be_valid }
   it { should_not be_admin }
@@ -43,28 +62,49 @@ describe User do
     before { @user.name = " " }
     it { should_not be_valid }
   end
+<<<<<<< HEAD
 
   describe "when email is not present" do
     before { @user.email = " " }
     it { should_not be_valid }
   end
 
+=======
+  
+  describe "when email is not present" do
+    before { @user.email = " "}
+    it { should_not be_valid }
+  end
+  
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   describe "when name is too long" do
     before { @user.name = "a" * 51 }
     it { should_not be_valid }
   end
+<<<<<<< HEAD
 
   describe "when email format is invalid" do
     it "should be invalid" do
       addresses = %w[user@foo,com user_at_foo.org example.user@foo.
                      foo@bar_baz.com foo@bar+baz.com foo@bar..com]
+=======
+  
+  describe "when email format is invalid" do
+    it "should be invalid" do
+      addresses = %w[user@foo,com user_at_foo.org example.user@foo.
+                     foo@bar_baz.com foo@bar+baz.com user@foo..com]
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
       addresses.each do |invalid_address|
         @user.email = invalid_address
         expect(@user).not_to be_valid
       end
     end
   end
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   describe "when email format is valid" do
     it "should be valid" do
       addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
@@ -74,13 +114,18 @@ describe User do
       end
     end
   end
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   describe "when email address is already taken" do
     before do
       user_with_same_email = @user.dup
       user_with_same_email.email = @user.email.upcase
       user_with_same_email.save
     end
+<<<<<<< HEAD
 
     it { should_not be_valid }
   end
@@ -93,16 +138,34 @@ describe User do
     it { should_not be_valid }
   end
 
+=======
+    
+    it { should_not be_valid }
+  end
+  
+  describe "when password is not present" do
+    before do
+      @user = User.new(name: "Example User", email: "user@example.com",
+                     password: " ", password_confirmation: " ")
+    end
+    it { should_not be_valid }
+  end
+  
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   describe "when password doesn't match confirmation" do
     before { @user.password_confirmation = "mismatch" }
     it { should_not be_valid }
   end
+<<<<<<< HEAD
 
   describe "with a password that's too short" do
     before { @user.password = @user.password_confirmation = "a" * 5 }
     it { should be_invalid }
   end
 
+=======
+  
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   describe "return value of authenticate method" do
     before { @user.save }
     let(:found_user) { User.find_by(email: @user.email) }
@@ -118,11 +181,20 @@ describe User do
       specify { expect(user_for_invalid_password).to be_false }
     end
   end
+<<<<<<< HEAD
 
+=======
+  
+  describe "with a password that's too short" do
+    before { @user.password = @user.password_confirmation = "a" * 5 }
+    it { should be_invalid }
+  end
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
   describe "remember token" do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
   end
+<<<<<<< HEAD
 
   describe "micropost associations" do
 
@@ -192,3 +264,6 @@ describe User do
     end
   end
 end
+=======
+end
+>>>>>>> 492a32513cf0a2428ce18f4cc64ccc76453e9bdc
